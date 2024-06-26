@@ -9,7 +9,7 @@ The repository is organized by weeks, with each week containing solutions to the
 ## How to Use
 
 1. **Navigate to the folder** corresponding to the week you are interested in.
-2. **Open the solution file** (e.g., `problem1.py`) to view the solution for that particular problem.
+2. **Open the solution file** (e.g., `leetcode-number`) to view the solution for that particular problem.
 3. **Read the problem statement** using the provided link to understand the context of the solution.
 
 ## Contributing
