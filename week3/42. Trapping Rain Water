@@ -1,0 +1,10 @@
+class Solution:
+    def trap(self, height: List[int]) -> int:
+        water_trapped = 0
+        n = len(height)
+
+        for i in range(n):
+            left_max = max(height[:i+1])
+            right_max = max(height[i:])
+            water_trapped += min(left_max, right_max) - height[i]
+        return water_trapped
