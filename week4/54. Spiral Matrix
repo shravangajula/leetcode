@@ -1,0 +1,29 @@
+class Solution:
+    def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
+        if not matrix:
+            return []
+        
+        m, n = len(matrix), len(matrix[0])
+        ans = []
+        r1, c1, r2, c2 = 0, 0, m - 1, n - 1
+
+        while len(ans) < m * n:
+            # Traverse from left to right along the top row
+            for j in range(c1, c2 + 1):
+                ans.append(matrix[r1][j])
+            # Traverse from top to bottom along the right column
+            for i in range(r1 + 1, r2 + 1):
+                ans.append(matrix[i][c2])
+            # Check to avoid repeating the same row or column
+            if r1 < r2:
+                # Traverse from right to left along the bottom row
+                for j in range(c2 - 1, c1 - 1, -1):
+                    ans.append(matrix[r2][j])
+            if c1 < c2:
+                # Traverse from bottom to top along the left column
+                for i in range(r2 - 1, r1, -1):
+                    ans.append(matrix[i][c1])
+            
+            r1, c1, r2, c2 = r1 + 1, c1 + 1, r2 - 1, c2 - 1
+        
+        return ans
